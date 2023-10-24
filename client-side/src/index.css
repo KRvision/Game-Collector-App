@@ -566,11 +566,6 @@ GAME DETAILS  */
   margin-top: 5px;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
 .dropbtn {
   background-color: black;
   color: white;
