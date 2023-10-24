@@ -36,9 +36,14 @@ const Nav = () => {
         {authToken ? (
           <>
             <a href="http://localhost:5173/user-detail">
-              <p style={{ color: "gold", fontSize: "25px" }}>
+              <span
+                style={{
+                  color: "gold",
+                  fontSize: "16px",
+                }}
+              >
                 Welcome! {userName}
-              </p>
+              </span>
             </a>
             <LogoutButton /> {/* Add the LogoutButton component */}
           </>
