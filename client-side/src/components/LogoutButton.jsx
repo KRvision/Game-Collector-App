@@ -8,9 +8,6 @@ const buttonStyle = {
   color: "white",
   transition: "color 0.3s",
   width: "135px",
-  marginLeft: "20px",
-  textAlign: "center",
-  justifyContent: "center",
 };
 
 const LogoutButton = () => {
