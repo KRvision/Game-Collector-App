@@ -31,8 +31,8 @@ const Nav = () => {
             <a href="http://localhost:5173/owned-list">Owned Games</a>
             <a href="http://localhost:5173/wish-list">Wish List</a>
           </div>
-          
         </div>
+        <a href="http://localhost:5173/developers">About Us</a>
         {authToken ? (
           <>
             <a href="http://localhost:5173/user-detail">
@@ -48,11 +48,8 @@ const Nav = () => {
             <LogoutButton /> {/* Add the LogoutButton component */}
           </>
         ) : (
-          <a href="http://localhost:5173/login">
-            <b>Login/SignUp</b>
-          </a>
+          <a href="http://localhost:5173/login">Login/SignUp</a>
         )}
-        <a href="http://localhost:5173/developers"><b>About Us</b></a>
       </nav>
     </header>
 
