@@ -581,7 +581,6 @@ GAME DETAILS  */
   width: 135px;
   left: 0;
   transform: translateX(-12%);
-  text-align: center;
   z-index: 1;
   margin-top: 10px;
 }

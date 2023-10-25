@@ -1,33 +1,31 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const buttonStyle = {
-    backgroundColor: 'transparent',
-    border: 'none',
-    cursor: 'pointer',
-    color: 'white', 
-    transition: 'color 0.3s',
-    
-  };
-
-  const hoverStyle = {
-    color: 'red', // Text color when hovered
-  };
+  backgroundColor: "transparent",
+  border: "none",
+  cursor: "pointer",
+  color: "white",
+  transition: "color 0.3s",
+  width: "135px",
+  marginLeft: "20px",
+  textAlign: "center",
+  justifyContent: "center",
+};
 
 const LogoutButton = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleLogout = () => {
     // Perform logout logic here, such as clearing user data from localStorage
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('userName');
-    localStorage.removeItem('userId')
-    alert('You have Logout!')
-    
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userId");
+    alert("You have Logout!");
   };
 
   const handleMouseEnter = (event) => {
     // Apply hover style when the mouse enters the button
-    event.target.style.color = hoverStyle.color;
+    event.target.style = hoverStyle;
   };
 
   const handleMouseLeave = (event) => {
@@ -41,8 +39,8 @@ const LogoutButton = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleLogout}
-    ><a href="http://localhost:5173/">Logout</a>
-      
+    >
+      <a href="http://localhost:5173/">Logout</a>
     </button>
   );
 };

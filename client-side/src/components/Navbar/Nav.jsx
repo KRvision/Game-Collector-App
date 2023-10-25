@@ -31,28 +31,31 @@ const Nav = () => {
             <a href="http://localhost:5173/owned-list">Owned Games</a>
             <a href="http://localhost:5173/wish-list">Wish List</a>
           </div>
-          
         </div>
+        <a href="http://localhost:5173/developers">About Us</a>
         {authToken ? (
-          <>
-            <a href="http://localhost:5173/user-detail">
-              <span
-                style={{
-                  color: "gold",
-                  fontSize: "16px",
-                }}
-              >
-                Welcome! {userName}
-              </span>
-            </a>
-            <LogoutButton /> {/* Add the LogoutButton component */}
-          </>
+          <div className="user-button-drop">
+            <div className="dropdown">
+              <a href="http://localhost:5173/user-detail" className="dropbtn">
+                <span
+                  style={{
+                    color: "gold",
+                    fontSize: "16px",
+                    textAlign: "center",
+                    position: "relative",
+                  }}
+                >
+                  Welcome {userName}!
+                </span>
+              </a>
+              <div className="dropdown-content">
+                <LogoutButton />
+              </div>
+            </div>
+          </div>
         ) : (
-          <a href="http://localhost:5173/login">
-            <b>Login/SignUp</b>
-          </a>
+          <a href="http://localhost:5173/login">Login/SignUp</a>
         )}
-        <a href="http://localhost:5173/developers"><b>About Us</b></a>
       </nav>
     </header>
 
