@@ -34,22 +34,25 @@ const Nav = () => {
         </div>
         <a href="http://localhost:5173/developers">About Us</a>
         {authToken ? (
-          <>
-            <div>
-              <a href="http://localhost:5173/user-detail">
+          <div className="user-button-drop">
+            <div className="dropdown">
+              <a href="http://localhost:5173/user-detail" className="dropbtn">
                 <span
                   style={{
                     color: "gold",
                     fontSize: "16px",
+                    textAlign: "center",
+                    position: "relative",
                   }}
                 >
-                  Welcome! {userName}
+                  Welcome {userName}!
                 </span>
               </a>
-              <LogoutButton />
+              <div className="dropdown-content">
+                <LogoutButton />
+              </div>
             </div>
-            {/* Add the LogoutButton component */}
-          </>
+          </div>
         ) : (
           <a href="http://localhost:5173/login">Login/SignUp</a>
         )}
