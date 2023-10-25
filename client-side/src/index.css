@@ -582,7 +582,7 @@ GAME DETAILS  */
   left: 0;
   transform: translateX(-12%);
   z-index: 1;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .dropdown-content a {
@@ -597,5 +597,48 @@ GAME DETAILS  */
 }
 
 .dropdown-content a:hover {
+  background-color: #87194c;
+}
+
+.user-dropdown {
+  background-color: black;
+  color: white;
+  padding: 14px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.user-dropbtn {
+  background-color: black;
+  color: white;
+  padding: 14px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.user-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  width: 135px;
+  transform: translateX(-12%);
+  z-index: 1;
+  margin-top: 13px;
+  margin-left: 14px;
+  color: white;
+}
+
+.user-dropdown-content a {
+  padding: 10px 16px;
+  display: block;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.user-dropdown:hover .user-dropdown-content {
+  display: block;
+}
+
+.user-dropdown-content a:hover {
   background-color: #87194c;
 }

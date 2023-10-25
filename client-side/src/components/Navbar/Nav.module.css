@@ -91,7 +91,7 @@ nav a::after {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%) scaleX(0);
-  width: 104px;
+  width: 130px;
   height: 2px;
   transform: scaleX(0);
   background: #87194c;
