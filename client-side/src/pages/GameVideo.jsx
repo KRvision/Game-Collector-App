@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./GameVideo.css"; 
+import "./GameVideo.css";
 
 function GameVideo() {
   const [videoUrls, setVideoUrls] = useState([]);
@@ -11,12 +11,10 @@ function GameVideo() {
       const maxRetries = 10;
       const numVideosToFetch = 1;
       const fetchedVideos = [];
-      
 
       for (let i = 0; i < numVideosToFetch; i++) {
         let videoUrl = null;
         let retries = maxRetries;
-        
 
         while (!videoUrl && retries > 0) {
           const randomGameId = Math.floor(Math.random() * 400000) + 1; // Generate a random game ID
@@ -28,7 +26,7 @@ function GameVideo() {
 
             if (videoData.results && videoData.results.length > 0) {
               const firstVideo = videoData.results[0];
-                
+
               if (firstVideo.data && firstVideo.data.max) {
                 videoUrl = firstVideo.data.max;
               }
@@ -63,27 +61,22 @@ function GameVideo() {
 
   return (
     <div className="body-video">
-
-    
-    <div className="container-video">
-      {videoUrls.map((videoUrl, index) => (
-        
-        <div className={`video-item video-${index + 1}`} key={index}>
-          <iframe
-            title={`Random Game Video ${index + 1}`}
-            width="100%"
-            height="100%"
-            src={videoUrl}
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
-        </div>
-      ))}
-    </div>
+      <div className="container-video">
+        {videoUrls.map((videoUrl, index) => (
+          <div className={`video-item video-${index + 1}`} key={index}>
+            <iframe
+              title={`Random Game Video ${index + 1}`}
+              width="100%"
+              height="100%"
+              src={videoUrl}
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default GameVideo;
-
-

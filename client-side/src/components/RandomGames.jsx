@@ -1,17 +1,17 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Slider from 'react-slick'; // Import the Slider component
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './Carousel.css'; 
-import PropTypes from 'prop-types';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Slider from "react-slick"; // Import the Slider component
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./Carousel.css";
+import PropTypes from "prop-types";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
       className={`${className} carousel-arrow-right`}
-      style={{ ...style, display: "block"}}
+      style={{ ...style, display: "block" }}
       onClick={onClick}
     />
   );
@@ -22,10 +22,9 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={`${className} carousel-arrow-left`}
-      style={{ ...style, display:"block" }}
+      style={{ ...style, display: "block" }}
       onClick={onClick}
     />
-    
   );
 }
 
@@ -40,7 +39,6 @@ SampleNextArrow.propTypes = {
   onClick: PropTypes.func, // Validate onClick as a function
 };
 
-
 function RandomGames() {
   const [randomGames, setRandomGames] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -50,7 +48,7 @@ function RandomGames() {
 
   useEffect(() => {
     // Define the URL of your backend API to fetch random games
-    const apiUrl = 'http://localhost:7098/game/detail'; // Adjust the API endpoint as needed
+    const apiUrl = "http://localhost:7098/game/detail"; // Adjust the API endpoint as needed
 
     // Generate 10 random gameIds between 1 and 1000 (adjust the range as needed)
     const getRandomGameId = () => Math.floor(Math.random() * 400000) + 1;
@@ -81,7 +79,11 @@ function RandomGames() {
           await fetchGameWithRetry(newGameId, retries - 1);
         } else {
           // No more retries, mark the game as not found
-          fetchedGames.push({ id: gameId, name: 'Game Not Found', description: 'Game not found for this ID.' });
+          fetchedGames.push({
+            id: gameId,
+            name: "Game Not Found",
+            description: "Game not found for this ID.",
+          });
         }
       }
     };
@@ -111,12 +113,9 @@ function RandomGames() {
     slidesToShow: 5, // Number of games to show at once
     slidesToScroll: 1,
     waitForAnimate: false,
-    
-    
-    
-  
+
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow /> 
+    prevArrow: <SamplePrevArrow />,
   };
 
   if (loading) {
@@ -129,30 +128,38 @@ function RandomGames() {
 
   return (
     <div>
-      
-      <div  className="carousel-container">
-      <div>
-      <h2 style={{color: 'gold'}}>Random Games</h2>
-      </div>
-      <Slider {...settings}>
-      {randomGames.map((game) => (
-          <Link to={`/game-detail/${game.id}`} key={game.id}>
-          <div>
-          <div style={{display: 'block', padding: '20px'}}>
-          
-          <div>
-                <img src={game.background_image} alt={game.name} className="carousel-item-img" />
+      <div className="carousel-container">
+        <div>
+          <h2
+            style={{
+              color: "gold",
+              textAlign: "center",
+              textDecoration: "underline",
+            }}
+          >
+            Random Games
+          </h2>
+        </div>
+        <Slider {...settings}>
+          {randomGames.map((game) => (
+            <Link to={`/game-detail/${game.id}`} key={game.id}>
+              <div>
+                <div style={{ display: "block", padding: "20px" }}>
+                  <div>
+                    <img
+                      src={game.background_image}
+                      alt={game.name}
+                      className="carousel-item-img"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="carousel-name">{game.name}</h2>
+                  </div>
+                </div>
               </div>
-            <div>
-            <h2 className="carousel-name">{game.name}</h2>
-            </div>
-          </div>
-          </div>
-         
-          </Link>
-        ))}
-      </Slider>
-       
+            </Link>
+          ))}
+        </Slider>
       </div>
     </div>
   );
