@@ -37,7 +37,9 @@ const LogoutButton = () => {
       onMouseLeave={handleMouseLeave}
       onClick={handleLogout}
     >
-      <a href="http://localhost:5173/">Logout</a>
+      <a href="http://localhost:5173/" style={{ textAlign: "center" }}>
+        Logout
+      </a>
     </button>
   );
 };
