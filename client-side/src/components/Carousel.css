@@ -1,12 +1,10 @@
 /* Styling for the container of each game item in the carousel */
 .carousel-container {
-  position: relative;
   max-width: 70%;
   margin: auto;
   align-items: center;
   height: 350px;
   padding: 10px 10px;
-  overflow: hidden;
 }
 
 /* Styling for the game image container */
@@ -34,7 +32,7 @@
   font-size: 18px;
   color: #fff;
   text-align: center;
-  padding-top: 10px;
+  padding: 5px;
   text-decoration: underline gold;
 }
 
@@ -51,24 +49,16 @@
   color: rgb(252, 252, 251);
 }
 
-.carousel-arrow {
-  font-size: 30px;
-  cursor: pointer;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.5s; /* Add a smooth transition effect */
-}
-
 .carousel-arrow-left::before {
   content: "Prev";
   position: absolute;
-  left: 15px;
+  left: -40px;
 }
 
 .carousel-arrow-right::before {
   content: "Next";
   position: absolute;
-  right: 15px;
+  left: 15px;
 }
 
 @media (max-width: 768px) {
