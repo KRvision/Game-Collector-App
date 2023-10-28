@@ -110,7 +110,7 @@ function NewReleases() {
         {data.map((game) => (
           <Link to={`/game-detail/${game.id}`} key={game.id}>
             <div>
-              <div style={{ display: "block", padding: "20px" }}>
+              <div style={{ display: "block", paddingTop: "20px" }}>
                 <div>
                   <img
                     src={game.background_image}
